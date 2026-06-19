@@ -1,15 +1,127 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+const title = "Виробництво електрощитів для промислових підприємств | Київ та область";
+const description = "Виготовлення силових щитів та щитів керування на замовлення. ГРЩ, ВРЩ, АВР, КРМ, ШУЗ. Гарантія 12 місяців. З 1999 року. Київ та область.";
 ---
-<BaseLayout title="Виробництво електрощитів для промислових підприємств | Київ">
-  <section class="em-hero">
-    <div class="em-hero-inner">
-      <h1>Виробництво силових щитів та щитів керування для промислових підприємств</h1>
-      <p class="em-hero-sub">Київ та область · З 1999 року · Гарантія 12 місяців</p>
-      <div>
-        <a href="/vykonani-roboty/" class="em-btn-primary">Переглянути роботи</a>
-        <a href="#forma-tz" class="em-btn-outline">Надіслати ТЗ</a>
-      </div>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+
+<!-- ===== G1 — ШАПКА ===== -->
+<header class="em-site-header">
+  <div class="em-header-inner">
+    <a href="/" class="em-logo">
+      <span class="em-logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+      </span>
+      <span class="em-logo-text">
+        <span class="em-logo-name">Електромонтаж</span>
+        <span class="em-logo-sub">Виготовлення електрощитів</span>
+      </span>
+    </a>
+    <nav aria-label="Головна навігація">
+      <ul class="em-site-nav">
+        <li><a href="/produktsiia/">Продукція</a></li>
+        <li><a href="/posluhy/">Послуги</a></li>
+        <li><a href="/vykonani-roboty/">Виконані роботи</a></li>
+        <li><a href="/pro-nas/">Про нас</a></li>
+        <li><a href="/kontakty/">Контакти</a></li>
+      </ul>
+    </nav>
+    <div class="em-header-right">
+      <a href="tel:+380675097094" class="em-btn-primary em-btn-sm">+38 (067) 509-70-94</a>
+      <button class="em-burger" aria-label="Відкрити меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </section>
-</BaseLayout>
+  </div>
+  <nav class="em-mobile-nav" aria-label="Мобільна навігація">
+    <a href="/produktsiia/">Продукція</a>
+    <a href="/posluhy/">Послуги</a>
+    <a href="/vykonani-roboty/">Виконані роботи</a>
+    <a href="/pro-nas/">Про нас</a>
+    <a href="/kontakty/">Контакти</a>
+    <a href="tel:+380675097094" class="em-mobile-phone">📞 +38 (067) 509-70-94</a>
+  </nav>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="em-hero">
+  <div class="em-hero-inner">
+    <h1>Виробництво силових щитів та щитів керування для промислових підприємств</h1>
+    <p class="em-hero-sub">Київ та область · З 1999 року · Гарантія 12 місяців</p>
+    <div class="em-hero-actions">
+      <a href="#vykonani" class="em-btn-primary">Зв'язатися з нами</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ПОРТФОЛІО / ВИКОНАНІ РОБОТИ ===== -->
+<section class="em-section-alt" id="vykonani">
+  <div class="em-section-alt-inner">
+    <span class="em-section-label">Наші роботи</span>
+    <h2>Виконані проєкти</h2>
+    <p class="em-lead">Понад 25 років виготовлення електрощитів для промислових підприємств Києва та області.</p>
+    <div style="margin-top: 24px;">
+      <a href="/vykonani-roboty/" class="em-btn-primary">Переглянути роботи</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== СПЕЦІАЛІЗАЦІЯ ===== -->
+<section class="em-section">
+  <span class="em-section-label">Спеціалізація</span>
+  <h2>Що ми виготовляємо</h2>
+  <div class="em-products-grid">
+    <a href="/posluhy-ta-produktsiia/hrshch" class="em-product-card">
+      <div class="em-product-card-body"><h3>ГРЩ / ВРЩ</h3><p>Силові щити до 630А</p></div>
+    </a>
+    <a href="/posluhy-ta-produktsiia/dymovydalennia" class="em-product-card">
+      <div class="em-product-card-body"><h3>Щити димовидалення</h3><p>Протипожежна автоматика</p></div>
+    </a>
+    <a href="/posluhy-ta-produktsiia/dvyhuny" class="em-product-card">
+      <div class="em-product-card-body"><h3>Керування двигунами</h3><p>Конвеєри, виробничі лінії</p></div>
+    </a>
+    <a href="/posluhy-ta-produktsiia/shuz" class="em-product-card">
+      <div class="em-product-card-body"><h3>ШУЗ</h3><p>Керування засувками</p></div>
+    </a>
+    <a href="/posluhy-ta-produktsiia/krm" class="em-product-card">
+      <div class="em-product-card-body"><h3>КРМ</h3><p>Компенсація реактивної потужності</p></div>
+    </a>
+  </div>
+</section>
+
+<!-- ===== ЧОМУ ОБИРАЮТЬ НАС ===== -->
+<section class="em-section-alt">
+  <div class="em-section-alt-inner">
+    <span class="em-section-label">Переваги</span>
+    <h2>Чому обирають нас</h2>
+    <div class="em-why-grid">
+      <div class="em-why-card"><h3>25+ років досвіду</h3><p>На ринку з 1999 року.</p></div>
+      <div class="em-why-card"><h3>Гарантія 12 місяців</h3><p>На кожен виготовлений щит.</p></div>
+      <div class="em-why-card"><h3>Терміни від 2 тижнів</h3><p>Узгоджуються при постановці у виготовлення.</p></div>
+      <div class="em-why-card"><h3>ETI / Hager / Schneider / Eaton</h3><p>Перевірені бренди компонентів.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== G2 — ФУТЕР ===== -->
+<footer class="em-site-footer">
+  <div class="em-footer-inner">
+    <span>© 2026 elektromontazh.kiev.ua — виробництво електрощитів, Київ та область</span>
+    <div class="em-footer-phone"><a href="tel:+380675097094">+38 (067) 509-70-94</a></div>
+  </div>
+</footer>
+
+<script src="/js/em-site.js"></script>
+</body>
+</html>
