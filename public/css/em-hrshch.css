@@ -346,35 +346,73 @@
   .em-faq-answer   { padding: 0 16px 16px !important; }
 }
 
+
 /* ════════════════════════════════════════
-   КОНТАКТНИЙ БЛОК (замінює форму ТЗ, G6 — новий)
+   КОНТАКТНИЙ БЛОК (замінює форму ТЗ)
 ════════════════════════════════════════ */
 .em-contact-section {
-  background: var(--c-bg2);
-  border-top: 2px solid var(--c-accent-border);
-  border-bottom: 2px solid var(--c-accent-border);
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 64px 24px;
   scroll-margin-top: 80px;
 }
-.em-contact-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.em-contact-grid {
+.em-contact-inner { max-width: 100%; }
+
+/* Копіюваний текст — телефон, email, адреса */
+.em-contact-text-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+  margin-top: 28px;
+}
+.em-contact-text-item {
+  background: var(--c-bg2);
+  border: 1.5px solid var(--c-accent-border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.em-contact-text-label {
+  font-size: 12px;
+  color: var(--c-muted);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.em-contact-text-value {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--c-head);
+  font-family: var(--ff-body);
+  user-select: all;
+  cursor: text;
+}
+.em-contact-hint {
+  font-size: 13px;
+  color: var(--c-muted);
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Кнопки-іконки месенджерів */
+.em-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
   margin-top: 28px;
 }
 .em-contact-card {
   background: #fff;
   border: 1.5px solid var(--c-accent-border);
   border-radius: var(--radius);
-  padding: 20px;
+  padding: 16px 10px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  align-items: center;
+  gap: 8px;
   text-decoration: none;
+  text-align: center;
   transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
 }
 .em-contact-card:hover {
@@ -382,33 +420,29 @@
   box-shadow: var(--shadow-card);
   transform: translateY(-2px);
 }
-.em-contact-card-static { cursor: default; }
-.em-contact-card-static:hover { transform: none; }
-.em-contact-card-icon { font-size: 22px; margin-bottom: 4px; }
+.em-contact-card-icon { width: 26px; height: 26px; fill: var(--c-accent); }
+.em-contact-card-viber .em-contact-card-icon { fill: #7360f2; }
+.em-contact-card-telegram .em-contact-card-icon { fill: #29a9eb; }
+.em-contact-card-whatsapp .em-contact-card-icon { fill: #25d366; }
 .em-contact-card-label {
-  font-size: 12px;
-  color: var(--c-muted);
-  text-transform: uppercase;
-  letter-spacing: .05em;
-  font-family: var(--ff-body);
-}
-.em-contact-card-value {
-  font-size: 16px;
+  font-size: 12.5px;
   font-weight: 600;
   color: var(--c-head);
   font-family: var(--ff-body);
 }
 .em-contact-hours {
-  margin-top: 20px;
-  font-size: 14px;
-  color: var(--c-muted);
-  font-family: var(--ff-body);
+  margin-top: 24px;
+  font-size: 15px;
+  color: var(--c-text);
 }
 
 @media (min-width: 601px) and (max-width: 1024px) {
-  .em-contact-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .em-contact-text-grid { grid-template-columns: 1fr !important; }
+  .em-contact-grid      { grid-template-columns: repeat(3, 1fr) !important; }
 }
 @media (max-width: 600px) {
-  .em-contact-section { padding: 40px 16px !important; }
-  .em-contact-grid { grid-template-columns: 1fr !important; }
+  .em-contact-section  { padding: 40px 16px !important; }
+  .em-contact-text-grid { grid-template-columns: 1fr !important; }
+  .em-contact-grid      { grid-template-columns: repeat(3, 1fr) !important; gap: 8px !important; }
+  .em-contact-card      { padding: 12px 6px !important; }
 }
