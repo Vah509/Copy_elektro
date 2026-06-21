@@ -1,0 +1,51 @@
+name: Auto Unzip AI Updates
+
+on:
+  push:
+    paths:
+      - 'ai-updates/**.zip'
+
+jobs:
+  unzip-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Git user
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Unzip and overwrite files
+        run: |
+          ZIP_FILE=$(ls ai-updates/*.zip | head -n 1)
+          
+          if [ -f "$ZIP_FILE" ]; then
+            echo "📦 Найдено обновление: $ZIP_FILE. Распаковываем..."
+            
+            # Распаковываем строго в корень репозитория elekto
+            unzip -o "$ZIP_FILE" -d ./
+            
+            echo "🧹 Удаляем архив из репозитория..."
+            rm "$ZIP_FILE"
+          else
+            echo "❌ Архив не найден."
+            exit 1
+          fi
+
+      - name: Commit and Push changes
+        run: |
+          git add .
+          
+          if git diff --staged --quiet; then
+            echo "Никаких изменений в коде не обнаружено."
+          else
+            git commit -m "🤖 Авто-обновление кода от ИИ (из архива)"
+            git push origin ${{ github.ref_name }}
+          fi
