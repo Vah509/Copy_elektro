@@ -1,4 +1,4 @@
-name: Auto Unzip AI Updates
+name: Auto Unzip and Clean AI Updates
 
 on:
   push:
@@ -22,17 +22,36 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Unzip and overwrite files
+      - name: Unzip, Clean and Overwrite files
         run: |
           ZIP_FILE=$(ls ai-updates/*.zip | head -n 1)
           
           if [ -f "$ZIP_FILE" ]; then
-            echo "📦 Найдено обновление: $ZIP_FILE. Распаковываем..."
+            echo "📦 Найдено обновление: $ZIP_FILE. Распаковываем во временную папку..."
+            mkdir ./temp_unzip
+            unzip -o "$ZIP_FILE" -d ./temp_unzip
             
-            # Распаковываем строго в корень репозитория elekto
-            unzip -o "$ZIP_FILE" -d ./
+            # Проверяем, попросил ли ИИ что-то удалить
+            if [ -f "./temp_unzip/delete.txt" ]; then
+              echo "🗑️ Обнаружен файл delete.txt. Начинаем удаление устаревших файлов..."
+              while IFS= read -r file_to_delete || [ -n "$file_to_delete" ]; do
+                # Убираем возможные символы возврата каретки \r из Windows-окружения
+                clean_path=$(echo "$file_to_delete" | tr -d '\r' | xargs)
+                if [ -n "$clean_path" ] && [ -f "$clean_path" ]; then
+                  echo "Удаляем: $clean_path"
+                  rm "$clean_path"
+                fi
+              done < ./temp_unzip/delete.txt
+              
+              # Удаляем сам служебный файл delete.txt из временной папки, чтобы он не попал в проект
+              rm ./temp_unzip/delete.txt
+            fi
             
-            echo "🧹 Удаляем архив из репозитория..."
+            echo "🚚 Переносим новые файлы в корень проекта..."
+            cp -r ./temp_unzip/* ./
+            
+            echo "🧹 Очистка временных файлов..."
+            rm -rf ./temp_unzip
             rm "$ZIP_FILE"
           else
             echo "❌ Архив не найден."
@@ -46,6 +65,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "Никаких изменений в коде не обнаружено."
           else
-            git commit -m "🤖 Авто-обновление кода от ИИ (из архива)"
+            git commit -m "🤖 Авто-обновление и очистка кода от ИИ (из архива)"
             git push origin ${{ github.ref_name }}
           fi
