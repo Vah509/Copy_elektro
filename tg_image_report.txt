@@ -1,14 +1,14 @@
-⏱️ *21:48:47*
+⏱️ *22:00:57*
 📸 *Инспекция фото:*
-• `public/images/krm/krm-montazh-kontaktory-kondensatory-eti-kyiv-2026-06-01.jpg` — ok
-• `public/images/krm/krm-vvodni-rubilnyky-eti-la3-avtomaty-kyiv-2026-06-06.jpg` — ok
-• `public/images/krm/krm-rehulyator-eti-pfc12-fasad-kyiv-2026-06-c3.jpg` — ok
-• `public/images/krm/krm-shafa-kku-rehulyatory-rpc12-kyiv-2026-06-08.jpg` — ok
-• `public/images/krm/krm-rehulyator-eti-pfc6-fasad-kyiv-2026-06-c2.jpg` — ok
-• `public/images/krm/krm-montazh-zboku-kontaktory-kondensatory-kyiv-2026-06-07.jpg` — ok
-• `public/images/krm/krm-kondensatory-eti-lpc-40-kvar-stellazh-kyiv-2026-06-05.jpg` — ok
-• `public/images/krm/krm-avtomaty-kontaktory-kondensatory-pohlyad-zverhu-kyiv-2026-06-04.jpg` — ok
-• `public/images/krm/krm-rehulyatory-eti-krupno-kyiv-2026-06-03.jpg` — ok
-• `public/images/krm/krm-vvid-rubilnyk-kontaktory-kondensatory-kyiv-2026-06-c4.jpg` — ok
-• `public/images/krm/krm-kontaktory-skhema-na-dveri-kyiv-2026-06-02.jpg` — ok
-• `public/images/krm/krm-kondensatorna-ustanovka-povnyy-vyhlyad-kyiv-2026-06-c1.jpg` — ok
+• `public/images/ahro/ahro-dvirtsia-peremikachy-panel-keruvannia-kyiv-2026-06-08.jpg` — ok
+• `public/images/ahro/ahro-shchyt-perelyahy-vnutrishniy-montazh-kyiv-2026-06-c2.jpg` — ok
+• `public/images/ahro/ahro-kompaktnyy-shchyt-verstak-schneider-kyiv-2026-06-05.jpg` — ok
+• `public/images/ahro/ahro-panel-keruvannia-nasosy-aeratsiia-kyiv-2026-06-c4.jpg` — ok
+• `public/images/ahro/ahro-ventyliatsiia-hodivlia-panel-kyiv-2026-06-c1.jpg` — ok
+• `public/images/ahro/ahro-plk-adut-eti-kontaktory-markuvannia-kyiv-2026-06-07.jpg` — ok
+• `public/images/ahro/ahro-shchyt-schneider-zelio-delta-kyiv-2026-06-c3.jpg` — ok
+• `public/images/ahro/ahro-vnutrishniy-montazh-rubylnyk-100a-kyiv-2026-06-03.jpg` — ok
+• `public/images/ahro/ahro-plk-zelio-schneider-krupnyy-plan-kyiv-2026-06-06.jpg` — ok
+• `public/images/ahro/ahro-fasad-shafa-keruvannia-avariyni-kyiv-2026-06-04.jpg` — ok
+• `public/images/ahro/ahro-shchyt-zahalnyi-vyhlyad-vidkrytyy-kyiv-2026-06-01.jpg` — ok
+• `public/images/ahro/ahro-vnutrishniy-montazh-eti-kontaktory-kyiv-2026-06-02.jpg` — ok
