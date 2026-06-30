@@ -1,31 +1,6 @@
 ---
 // Блок: теги + H1 + текст опису (через slot)
-const TYPE_LABELS: Record<string, string> = {
-  hrshch:           'ГРЩ / ВРЩ',
-  dymovydalennia:   'Димовидалення',
-  dvyhuny:          'Двигуни',
-  shuz:             'ШУЗ',
-  krm:              'КРМ',
-  'zenitni-lihtari':'Зенітні ліхтарі',
-  ahro:             'Агро',
-  plk:              'ПЛК',
-  elektromontazh:   'Електромонтаж',
-};
-
-const TAG_LABELS: Record<string, string> = {
-  avr:                      'Шафа з АВР',
-  'sylova-shafa':           'Силова шафа',
-  fire:                     'Пожежна автоматика',
-  'pryamyi-pusk':           'Прямий пуск',
-  'zirka-trykutnyk':        'Зірка-трикутник',
-  'chastotnyy-peretvoryuvach': 'Частотний перетворювач',
-  'myakyi-pusk':            'М\'який пуск',
-  plk:                      'ПЛК',
-  agro:                     'Агро',
-  promyslovist:             'Промисловість',
-  remont:                   'Реконструкція',
-  'kontrol-faz':             'Контроль фаз',
-};
+import { TYPE_LABELS, TAG_LABELS } from '../data/tags-registry';
 
 interface Props {
   title: string;

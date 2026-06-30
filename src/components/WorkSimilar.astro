@@ -1,6 +1,7 @@
 ---
 // Схожі роботи — алгоритм Б: тип=2 очки, тег=1 очко, топ-3 по даті
 import { getCollection } from 'astro:content';
+import { TYPE_LABELS, TAG_LABELS } from '../data/tags-registry';
 
 interface Props {
   currentSlug: string;
@@ -8,33 +9,6 @@ interface Props {
   tags: string[];
 }
 const { currentSlug, types, tags } = Astro.props;
-
-const TYPE_LABELS: Record<string, string> = {
-  hrshch:           'ГРЩ / ВРЩ',
-  dymovydalennia:   'Димовидалення',
-  dvyhuny:          'Двигуни',
-  shuz:             'ШУЗ',
-  krm:              'КРМ',
-  'zenitni-lihtari':'Зенітні ліхтарі',
-  ahro:             'Агро',
-  plk:              'ПЛК',
-  elektromontazh:   'Електромонтаж',
-};
-
-const TAG_LABELS: Record<string, string> = {
-  avr:          'Шафа з АВР',
-  'sylova-shafa': 'Силова шафа',
-  fire:         'Пожежна автоматика',
-  'pryamyi-pusk': 'Прямий пуск',
-  'zirka-trykutnyk': 'Зірка-трикутник',
-  'chastotnyy-peretvoryuvach': 'Частотний перетворювач',
-  'myakyi-pusk': 'М\'який пуск',
-  plk:          'ПЛК',
-  agro:         'Агро',
-  promyslovist: 'Промисловість',
-  remont:       'Реконструкція',
-  'kontrol-faz': 'Контроль фаз',
-};
 
 const allWorks = await getCollection('vykonani-roboty');
 

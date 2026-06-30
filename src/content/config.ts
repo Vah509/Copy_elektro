@@ -1,4 +1,11 @@
 import { defineCollection, z } from 'astro:content';
+import { TYPE_LABELS, TAG_LABELS } from '../data/tags-registry';
+
+// Будуємо enum-список дозволених значень з реєстру тегів.
+// Якщо в .md файлі вказано type/tag якого немає в реєстрі —
+// astro build впаде з помилкою і вкаже конкретний файл та значення.
+const validTypes = Object.keys(TYPE_LABELS) as [string, ...string[]];
+const validTags = Object.keys(TAG_LABELS) as [string, ...string[]];
 
 const vykonaniRoboty = defineCollection({
   type: 'content',
@@ -9,18 +16,14 @@ const vykonaniRoboty = defineCollection({
     // Дата виготовлення (для сортування, не відображається)
     date: z.date(),
 
-    // Типи продукції — slug з AlsoMake (один або кілька)
-    // hrshch | dymovydalennia | dvyhuny | shuz | krm | zenitni-lihtari | ahro | plk | elektromontazh
-    types: z.array(z.string()),
+    // Типи продукції — мають співпадати з ключами TYPE_LABELS у tags-registry.ts
+    types: z.array(z.enum(validTypes)).min(1),
 
-    // Додаткові теги (avr, plk, fire, pryamyi-pusk, agro, promyslovist тощо)
-    tags: z.array(z.string()).default([]),
+    // Додаткові теги — мають співпадати з ключами TAG_LABELS у tags-registry.ts
+    tags: z.array(z.enum(validTags)).default([]),
 
     // Короткий опис для SEO meta description (150-160 символів)
     description: z.string(),
-
-    // Повний опис (plain text, 2-4 абзаци — береться з тіла .md файлу)
-    // body — автоматично з Astro Content Collections
 
     // Технічні характеристики
     specs: z.array(z.object({
