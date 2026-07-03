@@ -141,20 +141,6 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"vykonani-roboty": {
-"dvyhuny-konveier-3x75kvt.md": {
-	id: "dvyhuny-konveier-3x75kvt.md";
-  slug: "dvyhuny-konveier-3x75kvt";
-  body: string;
-  collection: "vykonani-roboty";
-  data: InferEntrySchema<"vykonani-roboty">
-} & { render(): Render[".md"] };
-"dymovydalennia-trc-11kvt.md": {
-	id: "dymovydalennia-trc-11kvt.md";
-  slug: "dymovydalennia-trc-11kvt";
-  body: string;
-  collection: "vykonani-roboty";
-  data: InferEntrySchema<"vykonani-roboty">
-} & { render(): Render[".md"] };
 "hrshch-160a-dva-vvody-oblik.md": {
 	id: "hrshch-160a-dva-vvody-oblik.md";
   slug: "hrshch-160a-dva-vvody-oblik";
@@ -162,16 +148,16 @@ declare module 'astro:content' {
   collection: "vykonani-roboty";
   data: InferEntrySchema<"vykonani-roboty">
 } & { render(): Render[".md"] };
-"hrshch-400a-vvidnyi-avtomat.md": {
-	id: "hrshch-400a-vvidnyi-avtomat.md";
-  slug: "hrshch-400a-vvidnyi-avtomat";
+"hrshch-2x200a-dva-vvody.md": {
+	id: "hrshch-2x200a-dva-vvody.md";
+  slug: "hrshch-2x200a-dva-vvody";
   body: string;
   collection: "vykonani-roboty";
   data: InferEntrySchema<"vykonani-roboty">
 } & { render(): Render[".md"] };
-"hrshch-avr-250a-zernotok.md": {
-	id: "hrshch-avr-250a-zernotok.md";
-  slug: "hrshch-avr-250a-zernotok";
+"hrshch-400a-vvidnyi-avtomat.md": {
+	id: "hrshch-400a-vvidnyi-avtomat.md";
+  slug: "hrshch-400a-vvidnyi-avtomat";
   body: string;
   collection: "vykonani-roboty";
   data: InferEntrySchema<"vykonani-roboty">

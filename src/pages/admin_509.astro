@@ -4,10 +4,9 @@ import { TYPE_LABELS, TAG_LABELS, PROPERTY_LABELS } from '../data/tags-registry'
 
 const allWorks = await getCollection('vykonani-roboty');
 
-// Сортування: нові першими, ID = порядковий номер після сортування
+// Сортування: нові першими
 const works = allWorks
-  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
-  .map((w, i) => ({ ...w, id: i + 1 }));
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 
 const GITHUB_BASE = 'https://github.com/Vah509/elektro/edit/main/src/content/vykonani-roboty';
 const SITE_BASE = 'https://elektromontazh.kiev.ua/vykonani-roboty';
@@ -159,7 +158,7 @@ const SITE_BASE = 'https://elektromontazh.kiev.ua/vykonani-roboty';
     <tbody>
       {works.map(w => (
         <tr>
-          <td class="cell-id">{w.id}</td>
+          <td class="cell-id">{w.data.id}</td>
           <td class="cell-title">{w.data.title}</td>
           <td class="cell-slug">{w.slug}</td>
           <td>

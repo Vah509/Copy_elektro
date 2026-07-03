@@ -8,6 +8,8 @@ const validProperties = Object.keys(PROPERTY_LABELS)  as [string, ...string[]];
 const vykonaniRoboty = defineCollection({
   type: 'content',
   schema: z.object({
+    // Унікальний ID карточки — формат YYMMDDHHMMSS або YYMMDDN для старих
+    id: z.number(),
     title:       z.string(),
     date:        z.date(),
     types:       z.array(z.enum(validTypes)).min(1),

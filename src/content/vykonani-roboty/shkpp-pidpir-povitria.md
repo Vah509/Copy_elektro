@@ -1,4 +1,5 @@
 ---
+id: 2606294
 title: "Шафа керування підпором повітря (ШКПП)"
 date: 2026-06-29
 types: ["dvyhuny", "dymovydalennia"]
