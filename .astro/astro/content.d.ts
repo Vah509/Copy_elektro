@@ -155,13 +155,6 @@ declare module 'astro:content' {
   collection: "vykonani-roboty";
   data: InferEntrySchema<"vykonani-roboty">
 } & { render(): Render[".md"] };
-"hrshch-2x200a-dva-vvody.md": {
-	id: "hrshch-2x200a-dva-vvody.md";
-  slug: "hrshch-2x200a-dva-vvody";
-  body: string;
-  collection: "vykonani-roboty";
-  data: InferEntrySchema<"vykonani-roboty">
-} & { render(): Render[".md"] };
 "hrshch-400a-vvidnyi-avtomat.md": {
 	id: "hrshch-400a-vvidnyi-avtomat.md";
   slug: "hrshch-400a-vvidnyi-avtomat";
@@ -172,6 +165,13 @@ declare module 'astro:content' {
 "hrshch-rubilnyk-400a-oblik.md": {
 	id: "hrshch-rubilnyk-400a-oblik.md";
   slug: "hrshch-rubilnyk-400a-oblik";
+  body: string;
+  collection: "vykonani-roboty";
+  data: InferEntrySchema<"vykonani-roboty">
+} & { render(): Render[".md"] };
+"krm-2x40kvar-odyn-korpus.md": {
+	id: "krm-2x40kvar-odyn-korpus.md";
+  slug: "krm-2x40kvar-odyn-korpus";
   body: string;
   collection: "vykonani-roboty";
   data: InferEntrySchema<"vykonani-roboty">
