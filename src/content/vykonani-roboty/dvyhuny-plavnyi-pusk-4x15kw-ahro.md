@@ -2,7 +2,7 @@
 id: 260703211650
 title: "Шкаф керування чотирма двигунами аерації з плавним пуском та ПЛК"
 date: 2026-07-03
-types: ["dvyhuny", "plk", "ahro"]
+types: ["dvyhuny", "plk", "ahro", "shafi-keruvannia"]
 tags: ["sylova-shafa"]
 properties: ["plavnyi-pusk"]
 description: "Шкаф керування чотирма двигунами аерації по 15 кВт. Два плавних пуски CHNT RQ2 по два двигуни кожен, байпасні контактори, ПЛК Schneider Electric із суточним та тижневим таймером."
