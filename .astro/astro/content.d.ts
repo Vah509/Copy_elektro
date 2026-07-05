@@ -190,6 +190,13 @@ declare module 'astro:content' {
   collection: "vykonani-roboty";
   data: InferEntrySchema<"vykonani-roboty">
 } & { render(): Render[".md"] };
+"krm-2x95kvar-dvi-ustanovky-ktp.md": {
+	id: "krm-2x95kvar-dvi-ustanovky-ktp.md";
+  slug: "krm-2x95kvar-dvi-ustanovky-ktp";
+  body: string;
+  collection: "vykonani-roboty";
+  data: InferEntrySchema<"vykonani-roboty">
+} & { render(): Render[".md"] };
 "krm-80kvar-5-stupeniv.md": {
 	id: "krm-80kvar-5-stupeniv.md";
   slug: "krm-80kvar-5-stupeniv";
