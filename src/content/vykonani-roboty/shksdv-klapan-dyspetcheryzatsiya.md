@@ -2,7 +2,7 @@
 id: 260703205002
 title: "Шафа керування вентилятором димовидалення та клапаном з диспетчеризацією"
 date: 2026-07-03
-types: ["dymovydalennia", "dvyhuny"]
+types: ["dymovydalennia", "dvyhuny", "shafi-keruvannia"]
 tags: []
 properties: ["pryamyi-pusk", "kontrol-faz"]
 description: "Шафа керування вентилятором димовидалення та протипожежним клапаном. Прямий пуск, контроль фаз, захист від перенапруги, диспетчеризація. Апарати ETI."
