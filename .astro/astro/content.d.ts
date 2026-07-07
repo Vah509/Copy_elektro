@@ -253,6 +253,13 @@ declare module 'astro:content' {
   collection: "vykonani-roboty";
   data: InferEntrySchema<"vykonani-roboty">
 } & { render(): Render[".md"] };
+"shafa-shchob-2-kanaly.md": {
+	id: "shafa-shchob-2-kanaly.md";
+  slug: "shafa-shchob-2-kanaly";
+  body: string;
+  collection: "vykonani-roboty";
+  data: InferEntrySchema<"vykonani-roboty">
+} & { render(): Render[".md"] };
 "shafi-aeratoriv-agrofirma-weg-ssw07.md": {
 	id: "shafi-aeratoriv-agrofirma-weg-ssw07.md";
   slug: "shafi-aeratoriv-agrofirma-weg-ssw07";
