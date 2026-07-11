@@ -1,4 +1,5 @@
 ---
+import { PHONE, PHONE_DISPLAY } from '../../config';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
@@ -7,7 +8,7 @@ import AlsoMake from '../../components/AlsoMake.astro';
 import ContactBlock from '../../components/ContactBlock.astro';
 import Lightbox from '../../components/Lightbox.astro';
 
-const title = "Виготовлення конденсаторних установок КРМ на замовлення | elektromontazh.kiev.ua";
+const title = "Виготовлення конденсаторних установок КРМ на замовлення | elektroschit.com.ua";
 const description = "Виготовляємо конденсаторні установки КРМ для компенсації реактивної потужності на замовлення. Від 25 кВАр. Гарантія 12 місяців. Київ, ETI, Schneider Electric.";
 
 const faqItems = [
@@ -41,6 +42,7 @@ const faqItems = [
   },
 ];
 ---
+import { PHONE, PHONE_DISPLAY } from '../../config';
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -48,7 +50,7 @@ const faqItems = [
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
-  <link rel="canonical" href="https://elektromontazh.kiev.ua/posluhy-ta-produktsiia/krm" />
+  <link rel="canonical" href="https://elektroschit.com.ua/posluhy-ta-produktsiia/krm" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -76,7 +78,7 @@ const faqItems = [
       <div class="em-hero-product-actions">
         <a href="#kontakty-blok" class="em-btn-primary">Замовити / Зв'язатися з нами</a>
       </div>
-      <p class="em-hero-product-contact">Або зателефонуйте: <a href="tel:+380675097094">+38 (067) 509-70-94</a></p>
+      <p class="em-hero-product-contact">Або зателефонуйте: <a href={`tel:${PHONE}`}>{PHONE_DISPLAY}</a></p>
     </div>
     <div class="em-hero-collage">
       <div class="em-hero-collage-item">

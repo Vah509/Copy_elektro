@@ -1,11 +1,12 @@
 ---
+import { PHONE, PHONE_DISPLAY, EMAIL } from '../config';
 ---
 <footer class="em-site-footer">
   <div class="em-footer-inner">
     <span>© 2026 Електромонтаж — виробництво електрощитів, Київ та область</span>
     <div class="em-footer-contacts">
-      <a href="tel:+380981527555" class="em-footer-phone">+38 (098) 152-75-55</a>
-      <a href="mailto:elektroschit.info@gmail.com" class="em-footer-email">elektroschit.info@gmail.com</a>
+      <a href={`tel:${PHONE}`} class="em-footer-phone">{PHONE_DISPLAY}</a>
+      <a href={`mailto:${EMAIL}`} class="em-footer-email">{EMAIL}</a>
     </div>
   </div>
 </footer>

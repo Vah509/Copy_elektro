@@ -1,4 +1,5 @@
 ---
+import { PHONE, PHONE_DISPLAY } from '../config';
 const { title = 'Виробництво електрощитів | Київ' } = Astro.props;
 ---
 <!DOCTYPE html>
@@ -26,7 +27,7 @@ const { title = 'Виробництво електрощитів | Київ' } =
         <a href="/pro-nas/">Про нас</a>
         <a href="/kontakty/">Контакти</a>
       </nav>
-      <a href="tel:+380675097094" class="em-btn-primary">+38 (067) 509-70-94</a>
+      <a href={`tel:${PHONE}`} class="em-btn-primary">{PHONE_DISPLAY}</a>
     </div>
   </header>
 
@@ -37,7 +38,7 @@ const { title = 'Виробництво електрощитів | Київ' } =
   <footer class="em-site-footer">
     <div class="em-footer-inner">
       <p>© 2026 Електромонтаж. Виробництво електрощитів, Київ та область.</p>
-      <a href="tel:+380675097094" class="em-footer-phone">+38 (067) 509-70-94</a>
+      <a href={`tel:${PHONE}`} class="em-footer-phone">{PHONE_DISPLAY}</a>
     </div>
   </footer>
 </body>

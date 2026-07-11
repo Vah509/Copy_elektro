@@ -1,5 +1,5 @@
 // ============================================================
-// КОНФІГ САЙТУ — elektromontazh.kiev.ua
+// КОНФІГ САЙТУ — elektroschit.com.ua
 // src/config.ts
 // ============================================================
 
@@ -7,31 +7,29 @@
 
 /**
  * Домен для превью-посилань в адмінці (/admin_509/).
- * Змінити на боевой домен коли сайт переїде.
- * Наприклад: 'https://elektromontazh.kiev.ua'
  */
 export const SITE_PREVIEW = 'https://elektro-4a1.pages.dev';
 
 /**
- * Канонічний (боевой) домен — для <link rel="canonical"> на всіх сторінках.
- * Поки невідомий — залишаємо поточний робочий домен.
- * Замінити одним рядком коли з'явиться реальний домен.
+ * Канонічний домен — для <link rel="canonical"> на всіх сторінках.
  */
-export const SITE_CANONICAL = 'https://elektromontazh.kiev.ua';
+export const SITE_CANONICAL = 'https://elektroschit.com.ua';
 
 // ── GITHUB ───────────────────────────────────────────────────
 
-/**
- * Базовий URL для посилань «редагувати» в адмінці.
- * Змінювати не потрібно.
- */
 export const GITHUB_CONTENT_BASE = 'https://github.com/Vah509/elektro/edit/main/src/content/vykonani-roboty';
 
 // ── КОНТАКТИ ─────────────────────────────────────────────────
-// Зараз використовуються напряму в компонентах.
-// Винесені сюди як резерв — для майбутнього використання.
 
-export const PHONE = '+380675097094';
-export const PHONE_DISPLAY = '+38 (067) 509-70-94';
-export const EMAIL = '5033455@gmail.com';
-export const ADDRESS = 'Київ, вул. Печенізька, 35/43, оф. 168';
+export const PHONE        = '+380981527555';
+export const PHONE_DISPLAY = '+38 (098) 152-75-55';
+export const EMAIL        = 'elektroschit.info@gmail.com';
+
+export const ADDRESS      = 'Київ, вул. Печенізька, 35/43, оф. 168';
+export const MAPS_URL     = 'https://www.google.com/maps/search/?api=1&query=Київ,+вул.+Печенізька,+35/43';
+
+export const VIBER        = 'viber://chat?number=%2B380981527555';
+export const TELEGRAM     = 'https://t.me/+380981527555';
+export const WHATSAPP     = 'https://wa.me/380981527555';
+
+export const WORK_HOURS   = 'робочі дні з 9:00 до 17:00';
