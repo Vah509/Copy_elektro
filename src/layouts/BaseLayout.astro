@@ -182,6 +182,7 @@ const localBusinessJsonLd = {
       <ol class="em-breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
         {page.crumbs.map((crumb, i) => (
           <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            {i > 0 && <span class="em-breadcrumbs-sep" aria-hidden="true">›</span>}
             {crumb.href
               ? <a href={crumb.href} itemprop="item"><span itemprop="name">{crumb.label}</span></a>
               : <span itemprop="name" aria-current="page">{crumb.label}</span>
