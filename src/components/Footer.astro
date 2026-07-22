@@ -1,9 +1,14 @@
 ---
 import { PHONE, PHONE_DISPLAY, EMAIL } from '../config';
+const { lang = 'uk' } = Astro.props;
+
+const copy = lang === 'ru'
+  ? '© 2026 Elektroschit — производство электрощитов, Киев и область'
+  : '© 2026 Elektroschit — виробництво електрощитів, Київ та область';
 ---
 <footer class="em-site-footer">
   <div class="em-footer-inner">
-    <span>© 2026 Elektroschit — виробництво електрощитів, Київ та область</span>
+    <span>{copy}</span>
     <div class="em-footer-contacts">
       <a href={`tel:${PHONE}`} class="em-footer-phone">{PHONE_DISPLAY}</a>
       <a href={`mailto:${EMAIL}`} class="em-footer-email">{EMAIL}</a>

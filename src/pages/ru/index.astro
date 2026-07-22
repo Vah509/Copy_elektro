@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_CANONICAL } from '../../config';
+
+const page = {
+  lang:        'ru' as const,
+  altUrl:      '/',
+  section:     '',
+  title:       'Русскоязычная версия сайта — elektroschit.com.ua',
+  description: 'Изготовление силовых электрощитов и щитов управления на заказ. Киев и вся Украина.',
+  canonical:   `${SITE_CANONICAL}/ru/`,
+  crumbs:      [],
+};
+---
+<BaseLayout {page}>
+  <link slot="head" rel="stylesheet" href="/css/main.css" />
+
+  <div class="em-section" style="min-height: 60vh; display: flex; align-items: center;">
+    <div style="max-width: 560px; margin: 0 auto; text-align: center; padding: 60px 16px;">
+      <div style="font-size: 48px; margin-bottom: 24px;">⚡</div>
+      <h1 style="font-size: 1.5rem; margin-bottom: 16px; color: var(--c-head);">
+        Эта страница недоступна на русском языке
+      </h1>
+      <p style="color: var(--c-muted); margin-bottom: 32px; line-height: 1.7;">
+        Вы можете перейти на украинскую версию этой страницы или воспользоваться
+        украинской версией сайта для просмотра всего каталога продукции.
+      </p>
+      <a href="/" class="em-btn-primary" style="display: inline-block;">
+        Перейти на украинскую версию →
+      </a>
+    </div>
+  </div>
+</BaseLayout>
