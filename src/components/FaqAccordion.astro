@@ -1,10 +1,13 @@
 ---
 // items — масив { q: string, a: string }
 // sectionTitle — заголовок H2
-const { items = [], sectionTitle = 'Часті запитання' } = Astro.props;
+// lang — 'uk' (default) | 'ru'
+const { items = [], sectionTitle = 'Часті запитання', lang = 'uk' } = Astro.props;
+
+const sectionLabel = lang === 'ru' ? 'Частые вопросы' : 'Часті запитання';
 ---
 <section class="em-section">
-  <span class="em-section-label">Часті запитання</span>
+  <span class="em-section-label">{sectionLabel}</span>
   <h2>{sectionTitle}</h2>
   <div class="em-faq-list">
     {items.map((item: { q: string; a: string }, i: number) => (

@@ -975,3 +975,65 @@ h3 { font-size: 15px; }
   }
   .em-scroll-top svg { width: 18px; height: 18px; }
 }
+/* ── Перемикач мови — базові стилі ───────────────────── */
+.em-lang-active {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--c-head);
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+.em-lang-link {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--c-muted);
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.em-lang-link:hover {
+  color: var(--c-accent);
+}
+
+/* ── Перемикач мови — десктоп (між nav і header-right) ── */
+/* Прихований на мобільному та планшеті — там є в гамбургері */
+.em-lang-switch {
+  display: none; /* мобільний default — прихований */
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+.em-lang-sep {
+  display: block;
+  width: 16px;
+  height: 1px;
+  background: var(--c-divider);
+  margin: 1px 0;
+}
+@media (min-width: 901px) {
+  .em-lang-switch {
+    display: flex; /* показуємо тільки на десктопі */
+  }
+}
+
+/* ── Перемикач мови — мобільний (в кінці гамбургера) ─── */
+.em-mobile-lang {
+  padding: 0 16px 8px;
+}
+.em-mobile-lang-sep {
+  border: none;
+  border-top: 1px solid var(--c-divider);
+  margin: 8px 0;
+}
+.em-mobile-lang-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 0;
+}
+.em-mobile-lang-divider {
+  color: var(--c-divider);
+  font-size: 14px;
+}

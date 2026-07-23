@@ -93,6 +93,8 @@ interface PageProps {
   description: string;
   canonical:   string;
   crumbs:      Crumb[];
+  lang?:       'uk' | 'ru';
+  altUrl?:     string;
   ogType?:     'website' | 'article';
 }
 
@@ -153,9 +155,30 @@ const {
   contactTitle,
 } = Astro.props;
 
+const lang = page.lang ?? 'uk';
 const hasExtra1 = Astro.slots.has('extra1');
 const hasExtra2 = Astro.slots.has('extra2');
 const hasBrands = !!brands;
+
+// Тернарники для рядків інтерфейсу
+const t = {
+  ourWorks:       lang === 'ru' ? 'Наши работы'              : 'Наші роботи',
+  viewMorePhotos: lang === 'ru' ? 'Посмотреть работы →'      : 'Переглянути роботи →',
+  worksUrl:       lang === 'ru' ? '/ru/vykonani-roboty/'     : '/vykonani-roboty/',
+  whereUsed:      lang === 'ru' ? 'Где применяется'          : 'Де застосовується',
+  specs:          lang === 'ru' ? 'Технические характеристики': 'Характеристики',
+  components:     lang === 'ru' ? 'Комплектующие'            : 'Компоненти',
+  compTitle:      lang === 'ru' ? 'Комплектующие и производители' : 'Компоненти та виробники',
+  compLead:       lang === 'ru' ? 'Подбираем под бюджет и наличие. Конкретный бренд согласовывается при приёме заказа.' : 'Підбираємо під бюджет та наявність. Конкретний бренд узгоджується при прийомі замовлення.',
+  mainBrands:     lang === 'ru' ? 'Основные бренды'          : 'Основні бренди',
+  ecoBrands:      lang === 'ru' ? 'Эконом-комплектация'      : 'Економ-комплектація',
+  howWeWork:      lang === 'ru' ? 'Как мы работаем'          : 'Як ми працюємо',
+  stepsLabel:     lang === 'ru' ? '5 шагов от ТЗ до готового щита' : '5 кроків від ТЗ до готового щита',
+  advantages:     lang === 'ru' ? 'Преимущества'             : 'Переваги',
+  whyUs:          lang === 'ru' ? 'Почему заказывают у нас'  : 'Чому замовляють у нас',
+  orderBtn:       lang === 'ru' ? 'Заказать / Связаться с нами' : "Замовити / Зв'язатися з нами",
+  orCall:         lang === 'ru' ? 'Или позвоните:'           : 'Або зателефонуйте:',
+};
 ---
 <BaseLayout {page}>
   <slot slot="head" name="head" />
@@ -176,10 +199,10 @@ const hasBrands = !!brands;
           ))}
         </div>
         <div class="em-hero-product-actions">
-          <a href="#kontakty-blok" class="em-btn-primary">Замовити / Зв'язатися з нами</a>
+          <a href="#kontakty-blok" class="em-btn-primary">{t.orderBtn}</a>
         </div>
         <p class="em-hero-product-contact">
-          Або зателефонуйте: <a href={`tel:${PHONE}`}>{PHONE_DISPLAY}</a>
+          {t.orCall} <a href={`tel:${PHONE}`}>{PHONE_DISPLAY}</a>
         </p>
       </div>
       <div class="em-hero-collage">
@@ -200,7 +223,7 @@ const hasBrands = !!brands;
        2. ГАЛЕРЕЯ — білий фон
   ════════════════════════════════════════ -->
   <section class="em-section">
-    <span class="em-section-label">Наші роботи</span>
+    <span class="em-section-label">{t.ourWorks}</span>
     <h2>{gallery.h2}</h2>
     <div class="em-product-gallery">
       {gallery.items.map(item => (
@@ -218,7 +241,7 @@ const hasBrands = !!brands;
       ))}
     </div>
     <div class="em-gallery-cta">
-      <a href="/vykonani-roboty/" class="em-btn-primary">Переглянути роботи →</a>
+      <a href={t.worksUrl} class="em-btn-primary">{t.viewMorePhotos}</a>
     </div>
   </section>
 
@@ -256,7 +279,7 @@ const hasBrands = !!brands;
        5. ХАРАКТЕРИСТИКИ — білий фон
   ════════════════════════════════════════ -->
   <section class="em-section">
-    <span class="em-section-label">Характеристики</span>
+    <span class="em-section-label">{t.specs}</span>
     <h2>{specs.h2}</h2>
     <table class="em-specs-table">
       <tbody>
@@ -277,12 +300,12 @@ const hasBrands = !!brands;
   {hasBrands ? (
     <div class="em-section-alt">
       <div class="em-section-alt-inner">
-        <span class="em-section-label">Компоненти</span>
-        <h2>Компоненти та виробники</h2>
-        <p class="em-lead">Підбираємо під бюджет та наявність. Конкретний бренд узгоджується при прийомі замовлення.</p>
+        <span class="em-section-label">{t.components}</span>
+        <h2>{t.compTitle}</h2>
+        <p class="em-lead">{t.compLead}</p>
         <div class="em-brands">
           <div class="em-brands-group">
-            <div class="em-brands-group-label">Основні бренди</div>
+            <div class="em-brands-group-label">{t.mainBrands}</div>
             <div class="em-brands-row">
               {brands.main.map(b => (
                 <div class="em-brand-pill">{b}</div>
@@ -290,7 +313,7 @@ const hasBrands = !!brands;
             </div>
           </div>
           <div class="em-brands-group">
-            <div class="em-brands-group-label">Економ-комплектація</div>
+            <div class="em-brands-group-label">{t.ecoBrands}</div>
             <div class="em-brands-row">
               {brands.eco.map(b => (
                 <div class="em-brand-pill secondary">{b}</div>
@@ -308,7 +331,7 @@ const hasBrands = !!brands;
        7. ЯК МИ ПРАЦЮЄМО — білий фон
   ════════════════════════════════════════ -->
   <section class="em-section">
-    <span class="em-section-label">Як ми працюємо</span>
+    <span class="em-section-label">{t.howWeWork}</span>
     <h2>{steps.h2}</h2>
     <div class="em-steps-row">
       {steps.items.map((step, i) => (
@@ -333,7 +356,7 @@ const hasBrands = !!brands;
   ════════════════════════════════════════ -->
   <div class="em-section-alt">
     <div class="em-section-alt-inner">
-      <span class="em-section-label">Переваги</span>
+      <span class="em-section-label">{t.advantages}</span>
       <h2>{why.h2}</h2>
       <div class="em-why-grid">
         {why.cards.map(card => (
@@ -349,17 +372,17 @@ const hasBrands = !!brands;
   <!-- ════════════════════════════════════════
        9. FAQ — білий фон (вбудовано у FaqAccordion)
   ════════════════════════════════════════ -->
-  <FaqAccordion items={faq.items} sectionTitle={faq.sectionTitle} />
+  <FaqAccordion items={faq.items} sectionTitle={faq.sectionTitle} lang={lang} />
 
   <!-- ════════════════════════════════════════
       10. КОНТАКТНИЙ БЛОК — зелений (вбудовано)
   ════════════════════════════════════════ -->
-  <ContactBlock title={contactTitle} />
+  <ContactBlock title={contactTitle} lang={lang} />
 
   <!-- ════════════════════════════════════════
       11. ТАКОЖ ВИГОТОВЛЯЄМО — білий (вбудовано)
   ════════════════════════════════════════ -->
-  <AlsoMake currentSlug={slug} />
+  <AlsoMake currentSlug={slug} lang={lang} />
 
   <Lightbox />
   <script is:inline src="/js/em-site.js"></script>
